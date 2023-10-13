@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des tâches</title>
+</head>
+<body>
+    <h1>Gestion des tâches</h1>
+    
+    <form action="/insert" method="POST">
+        <label for="nomTache">Nom de la tâche :</label>
+        <input type="text" id="nomTache" name="nomTache" required>
+        <label for="dateTache">Nom de la tâche :</label>
+        <input type="text" id="dateTache" name="dateTache" required>
+        <input type="checkbox"  name="isDone" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Liste des tâches :</h2>
+    <ul id="liste_tache">
+        
+    </ul>
+    
+</body>
+</html>
