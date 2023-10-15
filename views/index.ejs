@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion des tâches</title>
+</head>
+<body>
+    <h1>Gestion des tâches</h1>
+
+    <form action="/insert" method="POST">
+        <label for="nomTache">Nom de la tâche :</label>
+        <input type="text" id="nomTache" name="nomTache" required>
+        <label for="isDone"> Tâche términée</label>
+        <input type="checkbox" id="isDone" name="isDone">
+        <button type="submit">Ajouter</button>
+    </form>
+
+ 
+    <h2>Liste des tâches :</h2>
+    <ul>
+        <% name.forEach(tache => { %>
+            <li>
+                <form action="/update_tache/<%= tache.id_tache %>" method="post">
+                    <input type="checkbox" name="isDone" <%= tache.isDone ? 'checked' : '' %>
+                    <span><%= tache.name %></span>
+                    <button type="submit">Mettre à jour</button>
+                </form>
+                <form action="/delete_tache/<%=tache.id_tache%>" method="post">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+</body>
+</html>
